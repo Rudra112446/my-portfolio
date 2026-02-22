@@ -20,13 +20,13 @@ const Skills = () => {
   const categories = ['All', 'Programming', 'Frontend', 'Backend', 'Database', 'Analytics']
   const [activeCategory, setActiveCategory] = React.useState('All')
 
-  const filteredSkills = activeCategory === 'All' 
-    ? skills 
+  const filteredSkills = activeCategory === 'All'
+    ? skills
     : skills.filter(skill => skill.category === activeCategory)
 
   return (
-    <section id="skills" className="py-20 bg-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 bg-dark overflow-hidden w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,11 +54,10 @@ const Skills = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
-                  : 'bg-dark-light text-gray-400 hover:text-white border border-gray-700 hover:border-primary'
-              }`}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${activeCategory === category
+                ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
+                : 'bg-dark-light text-gray-400 hover:text-white border border-gray-700 hover:border-primary'
+                }`}
             >
               {category}
             </button>
@@ -75,14 +74,14 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.25, delay: index * 0.05 }}
               whileHover={{ scale: 1.1 }}
-              className="bg-dark-light p-6 rounded-xl border border-gray-800 hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+              className="bg-dark-light p-4 sm:p-5 md:p-6 rounded-xl border border-gray-800 hover:border-primary/50 transition-all duration-300 group cursor-pointer"
             >
-              <div className="flex flex-col items-center space-y-4">
-                <div className={`text-6xl ${skill.color} group-hover:animate-bounce`}>
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4">
+                <div className={`text-4xl sm:text-5xl md:text-6xl ${skill.color} group-hover:animate-bounce`}>
                   {skill.icon}
                 </div>
-                <h3 className="text-white font-semibold text-center">{skill.name}</h3>
-                <span className="text-xs text-gray-500 bg-dark px-3 py-1 rounded-full">
+                <h3 className="text-white font-semibold text-center text-sm sm:text-base">{skill.name}</h3>
+                <span className="text-xs text-gray-500 bg-dark px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
                   {skill.category}
                 </span>
               </div>
@@ -97,17 +96,17 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-16 grid md:grid-cols-2 gap-8"
         >
-          <div className="bg-gradient-to-br from-primary/10 to-transparent p-8 rounded-xl border border-primary/30">
-            <h3 className="text-2xl font-bold mb-4 text-primary">Web Development</h3>
-            <p className="text-gray-300">
-              Building responsive, scalable, and user-friendly web applications using modern 
+          <div className="bg-gradient-to-br from-primary/10 to-transparent p-5 sm:p-6 md:p-8 rounded-xl border border-primary/30">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">Web Development</h3>
+            <p className="text-sm sm:text-base text-gray-300">
+              Building responsive, scalable, and user-friendly web applications using modern
               frameworks and best practices. Expertise in both frontend and backend development.
             </p>
           </div>
-          <div className="bg-gradient-to-br from-secondary/10 to-transparent p-8 rounded-xl border border-secondary/30">
-            <h3 className="text-2xl font-bold mb-4 text-secondary">Data Analytics</h3>
-            <p className="text-gray-300">
-              Transforming raw data into actionable insights through visualization and analysis. 
+          <div className="bg-gradient-to-br from-secondary/10 to-transparent p-5 sm:p-6 md:p-8 rounded-xl border border-secondary/30">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-secondary">Data Analytics</h3>
+            <p className="text-sm sm:text-base text-gray-300">
+              Transforming raw data into actionable insights through visualization and analysis.
               Proficient in SQL, Power BI, and data-driven decision making.
             </p>
           </div>

@@ -18,14 +18,14 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-dark pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-dark pt-16 overflow-hidden w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           {/* Greeting with bounce animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ 
+            transition={{
               duration: 0.4,
               type: "spring",
               stiffness: 250,
@@ -33,7 +33,7 @@ const Hero = () => {
             }}
             className="mb-4"
           >
-            <span className="inline-block text-5xl md:text-6xl animate-wave">👋</span>
+            <span className="inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-wave">👋</span>
           </motion.div>
 
           {/* Main heading with stagger effect */}
@@ -42,7 +42,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 px-2">
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Animated role switcher */}
-          <div className="h-16 md:h-20 flex items-center justify-center mb-8">
+          <div className="h-14 sm:h-16 md:h-20 flex items-center justify-center mb-6 md:mb-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentRole}
@@ -71,9 +71,9 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1, rotateX: 0 }}
                 exit={{ y: -20, opacity: 0, rotateX: -90 }}
                 transition={{ duration: 0.3 }}
-                className="text-2xl md:text-3xl font-semibold flex items-center gap-3"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold flex items-center gap-2 md:gap-3"
               >
-                <span className="text-primary text-3xl md:text-4xl">
+                <span className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {roles[currentRole].icon}
                 </span>
                 <span className="bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
@@ -90,7 +90,7 @@ const Hero = () => {
             transition={{ duration: 0.4, delay: 0.25 }}
             className="relative"
           >
-            <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-4 leading-relaxed">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-4 leading-relaxed px-4">
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -115,8 +115,8 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-gray-400 max-w-2xl mx-auto mb-12"
             >
-              I craft seamless digital experiences with modern web technologies while uncovering 
-              hidden patterns in data. From pixel-perfect frontends to robust backends, and from 
+              I craft seamless digital experiences with modern web technologies while uncovering
+              hidden patterns in data. From pixel-perfect frontends to robust backends, and from
               SQL queries to Power BI dashboards — I bring the full spectrum of tech expertise.
             </motion.p>
           </motion.div>
@@ -162,9 +162,9 @@ const Hero = () => {
             className="flex justify-center gap-6"
           >
             {[
-              { icon: <FaGithub size={28} />, href: 'https://github.com', label: 'GitHub' },
+              { icon: <FaGithub size={28} />, href: 'https://github.com/Rudra112446/my-portfolio', label: 'GitHub' },
               { icon: <FaLinkedin size={28} />, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: <FaEnvelope size={28} />, href: 'mailto:rudra@example.com', label: 'Email' }
+              { icon: <FaEnvelope size={28} />, href: 'mailto:soniabhi530@gmail.com', label: 'Email' }
             ].map((social, index) => (
               <motion.a
                 key={social.label}

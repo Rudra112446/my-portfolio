@@ -43,8 +43,8 @@ const About = () => {
     }, [hasAnimated])
 
     return (
-        <section id="about" className="py-20 bg-dark">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" className="py-20 bg-dark overflow-hidden w-full">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

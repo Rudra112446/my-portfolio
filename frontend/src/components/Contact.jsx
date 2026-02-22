@@ -37,8 +37,8 @@ const Contact = () => {
     }
 
     return (
-        <section id="contact" className="py-20 bg-dark">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-20 bg-dark overflow-hidden w-full">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-white mb-1">Email</h4>
-                                    <p className="text-gray-400">rudra.soni@example.com</p>
+                                    <p className="text-gray-400">soniabhi530@gmail.com</p>
                                 </div>
                             </div>
 
@@ -89,7 +89,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-white mb-1">Phone</h4>
-                                    <p className="text-gray-400">+91 XXX-XXX-XXXX</p>
+                                    <p className="text-gray-400">+91 7587385374</p>
                                 </div>
                             </div>
 

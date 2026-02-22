@@ -5,8 +5,8 @@ const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="bg-dark-light border-t border-gray-800">
-            <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-3 py-3">
+        <footer className="bg-dark-light border-t border-gray-800 overflow-hidden w-full">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="grid md:grid-cols-3 gap-6 mb-6">
                     {/* About */}
                     <div>
@@ -55,7 +55,7 @@ const Footer = () => {
                         <h4 className="text-white font-semibold mb-4">Connect With Me</h4>
                         <div className="flex gap-4">
                             <a
-                                href="https://github.com"
+                                href="https://github.com/Rudra112446/my-portfolio"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 bg-dark rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 transform hover:scale-110"
@@ -79,7 +79,7 @@ const Footer = () => {
                                 <FaTwitter size={20} />
                             </a>
                             <a
-                                href="mailto:rudra@example.com"
+                                href="mailto:soniabhi530@gmail.com"
                                 className="p-3 bg-dark rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 transform hover:scale-110"
                             >
                                 <FaEnvelope size={20} />

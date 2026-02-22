@@ -121,8 +121,8 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="py-20 bg-dark">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" className="py-20 bg-dark overflow-hidden w-full">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -130,11 +130,11 @@ const Projects = () => {
                     transition={{ duration: 0.3 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                         Featured <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Projects</span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 sm:mb-8"></div>
+                    <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
                         A showcase of my recent work and personal projects
                     </p>
                 </motion.div>
@@ -144,20 +144,20 @@ const Projects = () => {
                     <button
                         onClick={scrollLeftBtn}
                         disabled={currentIndex === 0}
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-primary/20 hover:bg-primary/40 p-4 rounded-full backdrop-blur-sm transition-all duration-300 ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
+                        className={`absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-10 bg-primary/20 hover:bg-primary/40 p-2 sm:p-3 md:p-4 rounded-full backdrop-blur-sm transition-all duration-300 ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
                             }`}
                     >
-                        <FaChevronLeft className="text-white text-xl" />
+                        <FaChevronLeft className="text-white w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                     </button>
 
                     {/* Right Navigation Button */}
                     <button
                         onClick={scrollRightBtn}
                         disabled={currentIndex === projects.length - 1}
-                        className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-primary/20 hover:bg-primary/40 p-4 rounded-full backdrop-blur-sm transition-all duration-300 ${currentIndex === projects.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
+                        className={`absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-10 bg-primary/20 hover:bg-primary/40 p-2 sm:p-3 md:p-4 rounded-full backdrop-blur-sm transition-all duration-300 ${currentIndex === projects.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
                             }`}
                     >
-                        <FaChevronRight className="text-white text-xl" />
+                        <FaChevronRight className="text-white w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                     </button>
 
                     <div
@@ -166,9 +166,9 @@ const Projects = () => {
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
                         onMouseMove={handleMouseMove}
-                        className={`flex gap-8 overflow-x-auto pb-8 px-12 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
-                            } scrollbar-hide`}
-                        style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
+                        className={`flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto pb-6 sm:pb-8 px-6 sm:px-8 md:px-12 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
+                            } scrollbar-hide snap-x snap-mandatory`}
+                        style={{ scrollBehavior: isDragging ? 'auto' : 'smooth', WebkitOverflowScrolling: 'touch' }}
                     >
                         {projects.map((project, index) => (
                             <motion.div
@@ -177,48 +177,48 @@ const Projects = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                                className="bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-all duration-300 group flex-shrink-0 w-96"
+                                className="bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-all duration-300 group flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-96 lg:w-[28rem] snap-start snap-always"
                             >
                                 <div className="relative overflow-hidden">
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-40 sm:h-48 md:h-52 lg:h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
                                 </div>
 
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
+                                <div className="p-4 sm:p-5 md:p-6">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white group-hover:text-primary transition-colors">
                                         {project.title}
                                     </h3>
-                                    <p className="text-gray-400 mb-4 text-sm">
+                                    <p className="text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base">
                                         {project.description}
                                     </p>
 
-                                    <div className="flex flex-wrap gap-2 mb-4">
+                                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                                         {project.tech.map((tech, i) => (
                                             <span
                                                 key={i}
-                                                className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full border border-primary/30"
+                                                className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm bg-primary/10 text-primary rounded-full border border-primary/30"
                                             >
                                                 {tech}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-3 sm:gap-4 text-sm sm:text-base">
                                         <a
                                             href={project.github}
-                                            className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors"
+                                            className="flex items-center gap-1.5 sm:gap-2 text-gray-400 hover:text-primary transition-colors"
                                         >
-                                            <FaGithub /> Code
+                                            <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" /> <span className="hidden sm:inline">Code</span>
                                         </a>
                                         <a
                                             href={project.live}
-                                            className="flex items-center gap-2 text-gray-400 hover:text-secondary transition-colors"
+                                            className="flex items-center gap-1.5 sm:gap-2 text-gray-400 hover:text-secondary transition-colors"
                                         >
-                                            <FaExternalLinkAlt /> Live Demo
+                                            <FaExternalLinkAlt className="w-4 h-4 sm:w-5 sm:h-5" /> <span className="hidden sm:inline">Live Demo</span>
                                         </a>
                                     </div>
                                 </div>
@@ -227,14 +227,14 @@ const Projects = () => {
                     </div>
 
                     {/* Bullet Point Indicators */}
-                    <div className="flex justify-center gap-3 mt-8">
+                    <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
                         {projects.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => scrollToProject(index)}
                                 className={`transition-all duration-300 rounded-full ${currentIndex === index
-                                        ? 'w-8 h-3 bg-gradient-to-r from-primary to-secondary'
-                                        : 'w-3 h-3 bg-gray-600 hover:bg-gray-500'
+                                    ? 'w-6 sm:w-8 h-2 sm:h-3 bg-gradient-to-r from-primary to-secondary'
+                                    : 'w-2 sm:w-3 h-2 sm:h-3 bg-gray-600 hover:bg-gray-500'
                                     }`}
                                 aria-label={`Go to project ${index + 1}`}
                             />
