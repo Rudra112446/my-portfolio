@@ -1,0 +1,16 @@
+{
+    "name": "rudra-portfolio",
+    "version": "1.0.0",
+    "description": "Rudra's Portfolio Website",
+    "type": "module",
+    "scripts": {
+        "build": "cd frontend && npm install && npm run build"
+    },
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "express-validator": "^7.0.1",
+        "nodemailer": "^6.9.7"
+    },
+    "author": "Rudra Avhishek Soni",
+    "license": "ISC"
+}
